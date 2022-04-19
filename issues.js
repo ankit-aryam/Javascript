@@ -30,10 +30,10 @@ function getissues(url, topic, repoName){
       let folderPath = path.join(__dirname, topic);
 
       dirCreator(folderPath);
-
      let filePath = path.join(folderPath,repoName + ".pdf");
 
      let text = JSON.stringify(arr);
+     
      let pdfDoc = new pdfkit();
      pdfDoc.pipe(fs.createWriteStream(filePath));
      pdfDoc.text(text);
